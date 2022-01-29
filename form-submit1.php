@@ -26,7 +26,7 @@ $pass_cap=preg_match('@[A-Z]@',$password);
 $pass_small=preg_match('@[a-z]@',$password);
 $pass_num=preg_match('@[0-9]@',$password);
 $pattern='/[\'\/~`\!@#\$%\^&\*\(\)_\-\+=\{\}\[\]\|;:"\<\>,\.\?\\\]/';
-$pass_char=preg_match($pattern,$password);
+$pass_char=preg_match($pattern,$password); 
 
 
 
@@ -51,21 +51,21 @@ if($validate_email){
                 mysqli_query($db_connect,$insert_query);
 
                 $_SESSION['success_massage'] = "Thanks for your feedback.We will contact you soon";
-                header('location:form.php');
+                header('location:login_1.php');
          }
          else{
             $_SESSION['already_registered_massage'] = "already registered";
-            header('location:form.php');
+            header('location:login_1.php');
           }           
     }
     else{
         $_SESSION['error_massage'] = "password must be 6 chars and contain 1 captial , 1 small , 1 number & 1 special char";
-        header('location:form.php');
+        header('location:login_1.php');
     }
 }
 else{
     $_SESSION['error_massage'] = "input a valid email";
-    header('location:form.php');
+    header('location:login_1.php');
 }
 
 

@@ -34,10 +34,10 @@ if($_FILES['fun_facts_bg_image']['name']){
 
              $image_new_name = $id . "." . $image_extension;
             
-             $save_location = "../upload/fun_facts/". $image_new_name;
+             $save_location = "../../upload/fun_facts/". $image_new_name;
              move_uploaded_file($_FILES['fun_facts_bg_image']['tmp_name'],$save_location);
             
-             $image_location = "upload/fun_facts/".$image_new_name;
+             $image_location = "../upload/fun_facts/".$image_new_name;
 
              $update_image_query = "UPDATE fun_facts SET image_location='$image_location' WHERE id= $id";
 

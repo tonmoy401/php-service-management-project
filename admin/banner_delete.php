@@ -1,7 +1,10 @@
 <?php
 require_once('../db.php');
+if(!isset($_SESSION['user_status'])){
+    header('location:../../login.php');
+}
 
-$id= $_GET['banner_id'];
+$id= $_GET['banner_id']; 
 
 $get_banner_location_query = "SELECT image_location FROM banners WHERE id=$id";
 $from_db = mysqli_query($db_connect,$get_banner_location_query);
@@ -11,5 +14,5 @@ unlink("../".$after_assoc['image_location']);
 
 $delete_query = "DELETE FROM banners WHERE id=$id";
 mysqli_query($db_connect,$delete_query);
-header('location:banner.php');
+header('location:banner.php'); 
 ?>

@@ -23,28 +23,58 @@
                     <form action="fun_facts_post.php" method="post" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label class="text-capitalize text-primary">fun facts heading</label>
-                                <input type="text" class="form-control" name="fun_facts_heading" required>
+                                <input type="text" class="form-control" name="fun_facts_heading"  value="<?=(isset($_SESSION['heading_done'])) ? $_SESSION['heading_done'] : ''?>">
+
+                                <?php if(isset($_SESSION['heading_err'])): ?>
+                                <small class="text-danger"><?=$_SESSION['heading_err']?></small>
+                                <?php unset($_SESSION['heading_err']) ?>
+                                <?php endif ?>
+                                  
                             </div>
                             <div class="mb-3">
                                 <label class="text-capitalize text-primary">fun facts white heading</label>
-                                <input type="text" class="form-control" name="fun_facts_white_heading" required>
+                                <input type="text" class="form-control" name="fun_facts_white_heading" value="<?=(isset($_SESSION['white_heading_done'])) ? $_SESSION['white_heading_done'] : ''?>">
+
+                                <?php if(isset($_SESSION['white_heading_err'])): ?>
+                                <small class="text-danger"><?=$_SESSION['white_heading_err']?></small>
+                                <?php unset($_SESSION['white_heading_err']) ?>
+                                <?php endif ?>
+
                             </div>
                             <div class="mb-3">
                                 <label class="text-capitalize text-primary">fun facts green heading </label>
-                                <input type="text" class="form-control" name="fun_facts_green_heading" required>
+                                <input type="text" class="form-control" name="fun_facts_green_heading" value="<?=(isset($_SESSION['green_heading_done'])) ? $_SESSION['green_heading_done'] : ''?>">
+
+                                <?php if(isset($_SESSION['green_heading_err'])): ?>
+                                <small class="text-danger"><?=$_SESSION['green_heading_err']?></small>
+                                <?php unset($_SESSION['green_heading_err']) ?>
+                                <?php endif ?>
+
                             </div>
                             <div class="mb-3">
                                 <label class="text-capitalize text-primary">fun facts para one</label>
-                                <input type="text" class="form-control" name="fun_facts_para_one" required>
+                                <input type="text" class="form-control" name="fun_facts_para_one" value="<?=(isset($_SESSION['para_one_done'])) ? $_SESSION['para_one_done'] : ''?>">
+
+                                <?php if(isset($_SESSION['para_one_err'])): ?>
+                                <small class="text-danger"><?=$_SESSION['para_one_err']?></small>
+                                <?php unset($_SESSION['para_one_err']) ?>
+                                <?php endif ?>
+
                             </div>
                             <div class="mb-3">
                                 <label class="text-capitalize text-primary">fun facts para two</label>
-                                <input type="text" class="form-control" name="fun_facts_para_two" required>
+                                <input type="text" class="form-control" name="fun_facts_para_two"value="<?=(isset($_SESSION['para_two_done'])) ? $_SESSION['para_two_done'] : ''?>">
+
+                                <?php if(isset($_SESSION['para_two_err'])): ?>
+                                <small class="text-danger"><?=$_SESSION['para_two_err']?></small>
+                                <?php unset($_SESSION['para_two_err']) ?>
+                                <?php endif ?>
+
                             </div>
                            
                             <div class="mb-3">
                                 <label class="text-capitalize text-primary">fun facts bg image</label>
-                                <input type="file" class="form-control" name="fun_facts_bg_image" required>
+                                <input type="file" class="form-control" name="fun_facts_bg_image">
                             </div>
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-primary">Fun Facts Update</button>

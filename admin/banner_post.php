@@ -29,6 +29,8 @@
             $update_query = "UPDATE banners SET image_location='$image_location' WHERE id=$id_from_db";
 
             mysqli_query($db_connect,$update_query);
+
+            $_SESSION['banner_success'] = "banner added successfully";
             $_SESSION['img_sub_success_msg'] = "banner updated successfully";
             header('location:banner.php');
           }

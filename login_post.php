@@ -14,11 +14,12 @@ $after_assoc= mysqli_fetch_assoc($db_log_res);
 if($after_assoc['total_users'] == 1){
     $_SESSION['email'] = $email;
     $_SESSION['user_status'] = 'yes';
+    $_SESSION['login_success'] = "Login successfully";
     header('location:admin/dashboard.php');
 }
 else{
     $_SESSION['error_msg'] = "Your email or Password is wrong or register";
-    header('location:login.php');
+    header('location:login_1.php');
 }
 
 

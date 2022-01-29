@@ -1,5 +1,6 @@
 <?php
 session_start();
+ //error_reporting(0);
     require_once('../header.php');
     require_once('navbar.php');
     require_once('../db.php');
@@ -7,8 +8,6 @@ session_start();
       header('location:../login.php');
     }
 ?>
-
-<h1 class="text-center">Hello Admin</h1>
 
 <?php
 $get_query = "SELECT email,phone,company,job,city,country FROM users";
@@ -86,3 +85,28 @@ $from_db =mysqli_query($db_connect,$get_query);
 <?php
     require_once('../footer.php');
 ?>
+
+<?php if(isset($_SESSION['login_success'])): ?>
+<script>
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 1600,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
+
+Toast.fire({
+  icon: 'success',
+  title: '<?=$_SESSION['login_success']?>'
+})
+
+</script>
+
+<?php endif ?>
+<?php unset($_SESSION['login_success']) ?>

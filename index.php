@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once('header.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,12 +55,23 @@ https://templatemo.com/tm-545-finance-business
               <li><a href="form.php"></i>sign-up</a></li>
             </ul>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4"> 
             <ul class="right-icons">
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <?php
+                      require_once 'db.php';
+                      $get_social_query = "SELECT * FROM social_medias WHERE active_status = 1";
+                      $social_from_db = mysqli_query($db_connect,$get_social_query);
+                      foreach($social_from_db as $social):
+                    ?>
+            
+              <li><a href="<?=$social['page_link']?>"><i class="fa <?=$social['social_icon']?>"></i></a></li>
+              <!-- <li><a href="#"><i class="fa fa-twitter"></i></a></li>
               <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-              <li><a href="#"><i class="fa fa-behance"></i></a></li>
+              <li><a href="#"><i class="fa fa-behance"></i></a></li> -->       
+            
+                  <?php
+                      endforeach
+                  ?>
             </ul>
           </div>
         </div>
@@ -312,19 +324,6 @@ https://templatemo.com/tm-545-finance-business
 
 <!-- form -->
 
-<?php
-if(isset($_SESSION['submit_success_msg'])){
-?>
-<div class="alert alert-success" role="alert">
-<?php
-   echo $_SESSION['submit_success_msg'];
-   unset($_SESSION['submit_success_msg']);
-?>
-</div>
-<?php 
-    }
-?> 
-
 
     <div class="callback-form">
       <div class="container">
@@ -362,6 +361,7 @@ if(isset($_SESSION['submit_success_msg'])){
                   <div class="col-lg-12">
                     <fieldset>
                       <button type="submit" id="form-submit" class="border-button">Send Message</button>
+                      
                     </fieldset>
                   </div>
                 </div>
@@ -464,7 +464,9 @@ if(isset($_SESSION['submit_success_msg'])){
     <script src="frontend/assets/js/owl.js"></script>
     <script src="frontend/assets/js/slick.js"></script>
     <script src="frontend/assets/js/accordions.js"></script>
-
+    <?php
+require_once('footer.php');
+?>
     <script language = "text/Javascript"> 
       cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
       function clearField(t){                   //declaring the array outside of the
@@ -478,3 +480,4 @@ if(isset($_SESSION['submit_success_msg'])){
 
   </body>
 </html>
+
