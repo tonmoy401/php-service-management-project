@@ -93,14 +93,17 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
+                    <span>Site management</span> 
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+                        <h6 class="collapse-header">Site Details Update</h6>
+                        <a class="collapse-item" href="banner.php">Banner</a>
+                        <a class="collapse-item" href="service_head.php">Service Head</a>
+                        <a class="collapse-item" href="service_item.php">Service Item</a>
+                        <a class="collapse-item" href="fun_facts.php">Fun Facts</a>
+                        <a class="collapse-item" href="fun_facts_num.php">Fun Facts Number</a>
+                        <a class="collapse-item" href="social_media.php">Social Media</a>
                         <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Other Pages:</h6>
                         <a class="collapse-item" href="404.html">404 Page</a>
@@ -340,16 +343,20 @@
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Activity Log
                                 </a> -->
+                                
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="../logout.php">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
                             </div>
+                          
+                               
+
                         </li>
-
+                        
                     </ul>
-
+                   
                 </nav>
                 <!-- End of Topbar -->
 

@@ -70,7 +70,9 @@ $from_db = mysqli_query($db_connect,$get_query);
                     <tbody>
                       <tfoot>
                         <tr>
-                          <td><button type="submit" class="btn btn-sm btn-danger">delete_marked_all</button></td>
+                          <td>
+                            <button type="submit" class="btn btn-sm btn-danger">delete_marked_all</button>
+                          </td>
                         </tr>
                       </tfoot>
                </table>    

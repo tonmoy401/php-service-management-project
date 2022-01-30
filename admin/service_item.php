@@ -16,7 +16,7 @@
     <div class="row mt-4">
         <div class="col-lg-3">
             <div class="card">
-                <div class="card-header bg-warning">
+                <div class="card-header">
                     <h5 class="card-title text-capitalize">Service Item add form</h5>
                 </div>
                 <div class="card-body">
@@ -43,7 +43,7 @@
         </div>
         <div class="col-lg-9">
             <div class="card">
-                <div class="card-header bg-warning">
+                <div class="card-header">
                     <h5 class="card-title text-capitalize">Service Item list</h5>
                 </div>
                 <div class="card-body">
@@ -99,8 +99,10 @@
                                     <a href="service_item_edit.php?service_item_id=<?=$seritem['id']?>"
                                      class="btn btn-sm btn-info">Edit</a>
 
-                                    <a href="service_item_delete.php?service_item_id=<?=$seritem['id']?>"
-                                     class="btn btn-sm btn-danger">Delete</a>
+                                    <!-- <a href="service_item_delete.php?service_item_id=<?=$seritem['id']?>"
+                                     class="btn btn-sm btn-danger">Delete</a> -->
+                                     <button value="service_item_delete.php?service_item_id=<?=$seritem['id']?>" type="button" 
+                                    class="del-btn btn btn-sm btn-danger">Delete</button>
                                     </div>
                                 </td>
                            </tr>
@@ -121,3 +123,71 @@
 <?php
  require_once('../footer.php');
 ?>
+
+
+<script>
+
+  $('.del-btn').click(function(){
+    var link= $(this).val();
+          Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = link
+        }
+      })
+  }); 
+
+</script>
+<?php if(isset($_SESSION['sitem_success'])): ?>
+
+<script>
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 1400,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer)
+    toast.addEventListener('mouseleave', Swal.resumeTimer)
+  }
+})
+
+Toast.fire({
+  icon: 'success',
+  title: '<?=$_SESSION['sitem_success']?>'
+})
+
+
+</script>
+<?php endif ?>
+
+<?php unset($_SESSION['sitem_success']) ?>
+
+
+
+
+<?php if(isset($_SESSION['sitem_edit'])): ?>
+
+<script>
+
+Swal.fire({
+  position: 'top-end',
+  icon: 'success',
+  title: 'Your work has been saved',
+  showConfirmButton: false,
+  timer: 1500
+})
+
+</script>
+<?php endif ?>
+
+<?php unset($_SESSION['sitem_edit']) ?>

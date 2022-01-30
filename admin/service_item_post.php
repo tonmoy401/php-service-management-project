@@ -28,6 +28,7 @@
             $update_query = "UPDATE service_item SET image_location='$image_location' WHERE id=$id_from_db";
 
             mysqli_query($db_connect,$update_query);
+            $_SESSION['sitem_success'] = "banner added successfully";
             $_SESSION['service_item_succs_msg'] = "service item updated successfully";
             header('location:service_item.php');
           }

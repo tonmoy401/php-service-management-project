@@ -20,7 +20,7 @@
     <div class="row mt-4">
         <div class="col-lg-6 m-auto">
             <div class="card">
-                <div class="card-header bg-warning">
+                <div class="card-header">
                     <h5 class="card-title text-capitalize">social media edit form</h5>
                 </div>
                 <div class="card-body">

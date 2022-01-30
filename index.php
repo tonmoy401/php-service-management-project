@@ -51,8 +51,8 @@ https://templatemo.com/tm-545-finance-business
             <ul class="left-info">
               <li><a href="#"><i class="fa fa-clock-o"></i>Mon-Fri 09:00-17:00</a></li>
               <li><a href="#"><i class="fa fa-phone"></i>090-080-0760</a></li>
-              <li><a href="login.php">login</a></li>
-              <li><a href="form.php"></i>sign-up</a></li>
+              <li><a href="login_1.php">login</a></li>
+              <li><a href="login_1.php"></i>sign-up</a></li>
             </ul>
           </div>
           <div class="col-md-4"> 

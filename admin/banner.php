@@ -10,13 +10,13 @@
     $get_query = "SELECT * FROM banners";
     $from_db = mysqli_query($db_connect,$get_query);
 ?>
-
+ 
 <section>
 <div class="container">
     <div class="row mt-4">
         <div class="col-lg-3">
             <div class="card">
-                <div class="card-header bg-warning">
+                <div class="card-header">
                     <h5 class="card-title text-capitalize">banner add form</h5>
                 </div>
                 <div class="card-body">
@@ -61,7 +61,7 @@
         </div>
         <div class="col-lg-9">
             <div class="card">
-                <div class="card-header bg-warning">
+                <div class="card-header">
                     <h5 class="card-title text-capitalize">banner list</h5>
                 </div>
                 <div class="card-body">
@@ -116,7 +116,8 @@
                                    endif
                                    ?> 
                                     <a href="banner_edit.php?banner_id=<?=$banner['id']?>" class="btn btn-sm btn-info">Edit</a>
-                                    <button value="banner_delete.php?banner_id=<?=$banner['id']?>" type="button" class="del-btn btn btn-sm btn-danger">Delete</button>
+                                    <button value="banner_delete.php?banner_id=<?=$banner['id']?>" type="button" 
+                                    class="del-btn btn btn-sm btn-danger">Delete</button>
                                     </div>
                                 </td>
                            </tr>

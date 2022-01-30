@@ -12,6 +12,7 @@
      $get_query = "SELECT * FROM service_item WHERE id = $id";
      $from_db = mysqli_query($db_connect,$get_query);
      $after_assoc = mysqli_fetch_assoc($from_db);
+     $_SESSION['sitem_edit'] = "yes";
 
 ?>
 
@@ -21,7 +22,7 @@
     <div class="row mt-4">
        <div class="col-lg-6 m-auto">
             <div class="card">
-                <div class="card-header bg-warning">
+                <div class="card-header">
                     <h5 class="card-title text-capitalize">Service Item Edit form</h5>
                 </div>
                 <div class="card-body">

@@ -16,7 +16,7 @@
     <div class="row mt-4">
         <div class="col-lg-3">
             <div class="card">
-                <div class="card-header bg-warning">
+                <div class="card-header">
                     <h5 class="card-title text-capitalize">social media add form</h5>
                 </div>
                 <div class="card-body">
@@ -53,7 +53,7 @@
                                 <?php endif ?>
                                  
                             </div>
-                            <div class="mb-3 overflow-scroll" style="height:200px;">
+                            <div class="mb-3 overflow-scroll" style="height:250px;">
                                 <?php
                                 $icons = array("fa-500px","fa-address-book","fa-address-book-o","fa-address-card","fa-address-card-o","fa-adjust","fa-adn","fa-align-center","fa-align-justify","fa-align-left","fa-align-right",
                                 "fa-amazon","fa-ambulance","fa-american-sign-language-interpreting","fa-anchor","fa-android","fa-angellist","fa-angle-double-down","fa-angle-double-left","fa-angle-double-right","fa-angle-double-up",
@@ -124,7 +124,7 @@
         </div>
         <div class="col-lg-9">
             <div class="card">
-                <div class="card-header bg-warning">
+                <div class="card-header">
                     <h5 class="card-title text-capitalize">social media list</h5>
                 </div>
                 <div class="card-body">

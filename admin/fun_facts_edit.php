@@ -11,6 +11,7 @@
     $get_query = "SELECT * FROM fun_facts WHERE id=$id";
     $fun_facts_from_db = mysqli_query($db_connect,$get_query);
     $after_assoc = mysqli_fetch_assoc($fun_facts_from_db);
+    $_SESSION['funs_edit'] = "yes";
 ?>
 
 <section>
@@ -18,7 +19,7 @@
         <div class="row">
             <div class="col-lg-6 m-auto">
             <div class="card mt-4">
-                <div class="card-header bg-info">
+                <div class="card-header">
                     <h5 class="card-title text-capitalize">fun facts Edit Form</h5>
                 </div>
                     <div class="card-body">

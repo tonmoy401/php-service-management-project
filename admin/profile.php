@@ -19,7 +19,7 @@ $after_assoc = mysqli_fetch_assoc($db_result);
     <div class="row">
       <div class="col-lg-8 m-auto">
           <div class="card mt-4">
-            <div class="card-header bg-warning">
+            <div class="card-header">
                     <h3 class="card-title bg-warning d-flex justify-content-between">Profile Information<a href="profile_edit.php" 
                     class="bg-info text-dark">Edit</a></h3>
             </div> 

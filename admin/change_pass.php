@@ -13,7 +13,7 @@
     <div class="row">
       <div class="col-lg-5 m-auto">
           <div class="card mt-4">
-            <div class="card-header bg-info">
+            <div class="card-header">
                     <h3 class="card-title d-flex justify-content-between">Password Change Form</h3>
             </div> 
                 <div class="card-body">

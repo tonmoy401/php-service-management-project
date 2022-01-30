@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-lg-6 m-auto">
             <div class="card mt-4">
-                <div class="card-header bg-info">
+                <div class="card-header">
                     <h5 class="card-title text-capitalize">banner Edit Form</h5>
                 </div>
                     <div class="card-body">

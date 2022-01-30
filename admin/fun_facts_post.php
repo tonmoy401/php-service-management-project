@@ -57,6 +57,7 @@
             unset($_SESSION['para_one_done']);
             unset($_SESSION['para_two_done']);
 
+            $_SESSION['funs_success'] = "Fun fucts added successfully";
             header('location:fun_facts.php');
 
     }
